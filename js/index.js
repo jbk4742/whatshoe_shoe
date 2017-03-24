@@ -25,10 +25,16 @@ $('#shoe_register').click(function () {
     var football_right_e = document.getElementById('football_right');
     var football_right = football_right_e.options[football_right_e.selectedIndex].value;
 
-    //해당 이미지 url 저장
-    var right_img = "http://whatshoe.co.kr/bk/shoe/images/R/"+measure_size_right+""+football_right+".png";
-    var left_img = "http://whatshoe.co.kr/bk/shoe/images/L/"+measure_size_left+""+football_left+".png";
+    //발볼 구분 라지, 미디엄, 스몰중에서 구분 후 저장
+    var football_L;
+    var football_R;
 
+    football_L = compare_Football(football_left);
+    football_R = compare_Football(football_right);
+
+    //해당 이미지 url 저장
+    var right_img = "http://whatshoe.co.kr/bk/shoe/images/R/"+measure_size_right+""+football_R+".png";
+    var left_img = "http://whatshoe.co.kr/bk/shoe/images/L/"+measure_size_left+""+football_L+".png";
 
     //수신번호 메시지전송을 위해 input value 설정
     document.getElementById('susin1').value = phone;
@@ -57,6 +63,7 @@ $('#shoe_register').click(function () {
         } else {
             comment = "측정한 발의 사이즈는 왼발 "+measure_size_left+", 오른발 "+measure_size_right+" / 발볼의 사이즈는 왼발 "+football_left+", 오른발 "+football_right+" 입니다. 이 수치들로 봤을 때 고객님의 발은 넓적형에 가깝습니다. 넓적형은 평균대비 발볼의 사이즈가 큰 경우로써 신발을 신을 때 끼는 경우가 생길 수도 있으니 유의하시길 바랍니다.";
         }
+
         document.getElementById('sms_msg').value = comment;
         alert(comment);
 
@@ -71,7 +78,7 @@ $('#shoe_register').click(function () {
                 measure_size_left : measure_size_left,
                 measure_size_right : measure_size_right,
                 football_left : football_left,
-                football_right : football_right
+                football_right : football_right,
             },
             function (data, status) {
                 if(data === "1"){
@@ -94,7 +101,7 @@ $('#shoe_register').click(function () {
                 left_size : measure_size_left,
                 right_size : measure_size_right,
                 left_ball : football_left,
-                right_ball : football_right
+                right_ball : football_right,
             },
             function (data, status) {
                 alert(status);

@@ -82,3 +82,14 @@ function valid_EmailCheck(valid_email){
         return true;
     }
 }       //이메일 유효성 체크
+
+//발볼 3가지 구분 요소  
+function compare_Football(football) {
+    if(football === "A" || football === "A-B" || football === "B" || football === "B-C"){
+        return "small";
+    } else if(football === "C" || football === "C-D" || football === "D"){
+        return "medium";
+    } else{
+        return "large";
+    }
+}
