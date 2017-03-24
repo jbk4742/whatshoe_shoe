@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="shoe_input_body">
+        <div class="shoe_input_row">
+            <label>이름</label>
+            <input id="shoe_input_name" type="text">
+        </div>
+        <div class="shoe_input_row">
+            <label>전화번호</label>
+            <input id="shoe_input_phone" type="text">
+        </div>
+        <div class="shoe_input_row">
+            <label>이메일</label>
+            <input id="shoe_input_mail" type="text">
+        </div>
+        <div class="shoe_input_row">
+            <label>왼발 기성화 사이즈</label>
+            <select id="shoe_size_left">
+                <option value=""></option>
+                <option value="230">230</option>
+                <option value="235">235</option>
+                <option value="240">240</option>
+                <option value="245">245</option>
+                <option value="250">250</option>
+                <option value="255">255</option>
+                <option value="260">260</option>
+                <option value="265">265</option>
+                <option value="270">270</option>
+                <option value="275">275</option>
+                <option value="280">280</option>
+                <option value="285">285</option>
+                <option value="290">290</option>
+            </select>
+
+            <label>오른발 기성화 사이즈</label>
+            <select id="shoe_size_right">
+                <option value=""></option>
+                <option value="230">230</option>
+                <option value="235">235</option>
+                <option value="240">240</option>
+                <option value="245">245</option>
+                <option value="250">250</option>
+                <option value="255">255</option>
+                <option value="260">260</option>
+                <option value="265">265</option>
+                <option value="270">270</option>
+                <option value="275">275</option>
+                <option value="280">280</option>
+                <option value="285">285</option>
+                <option value="290">290</option>
+            </select>
+        </div>
+        <div class="shoe_input_row">
+            <label>왼발 측정 사이즈</label>
+            <select id="measure_size_left">
+                <option value=""></option>
+                <option value="230">230</option>
+                <option value="235">235</option>
+                <option value="240">240</option>
+                <option value="245">245</option>
+                <option value="250">250</option>
+                <option value="255">255</option>
+                <option value="260">260</option>
+                <option value="265">265</option>
+                <option value="270">270</option>
+                <option value="275">275</option>
+                <option value="280">280</option>
+                <option value="285">285</option>
+                <option value="290">290</option>
+            </select>
+
+            <label>오른발 측정 사이즈</label>
+            <select id="measure_size_right">
+                <option value=""></option>
+                <option value="230">230</option>
+                <option value="235">235</option>
+                <option value="240">240</option>
+                <option value="245">245</option>
+                <option value="250">250</option>
+                <option value="255">255</option>
+                <option value="260">260</option>
+                <option value="265">265</option>
+                <option value="270">270</option>
+                <option value="275">275</option>
+                <option value="280">280</option>
+                <option value="285">285</option>
+                <option value="290">290</option>
+            </select>
+        </div>
+        <div class="shoe_input_row">
+            <label>발볼 왼</label>
+            <select id="football_left">
+                <option value=""></option>
+                <option value="A">A</option>
+                <option value="A-B">A-B</option>
+                <option value="B">B</option>
+                <option value="B-C">B-C</option>
+                <option value="C">C</option>
+                <option value="C-D">C-D</option>
+                <option value="D">D</option>
+                <option value="D-E">D-E</option>
+                <option value="E">E</option>
+                <option value="E-E2">E-E2</option>
+                <option value="E2">E2</option>
+            </select>
+            <label>발볼 오</label>
+            <select id="football_right">
+                <option value=""></option>
+                <option value="A">A</option>
+                <option value="A-B">A-B</option>
+                <option value="B">B</option>
+                <option value="B-C">B-C</option>
+                <option value="C">C</option>
+                <option value="C-D">C-D</option>
+                <option value="D">D</option>
+                <option value="D-E">D-E</option>
+                <option value="E">E</option>
+                <option value="E-E2">E-E2</option>
+                <option value="E2">E2</option>
+            </select>
+        </div>
+        <div class="shoe_input_row">
+            <div id="shoe_register">
+                등록하기
+            </div>
+        </div>
+        <div class="shoe_input_row">
+            <img id="shoe_L_img">
+        </div>
+        <div class="shoe_input_row">
+            <img id="shoe_R_img">
+        </div>
+        <form action="http://whatshoe.co.kr/sms/apitool/now_sms_send.php" id="form" method="post">
+            <label>문자 보낼 내용</label>
+            <input type="hidden" id="type_set" name="type_set" value="A">
+            <input type="hidden" id="sms_from" name="sms_from" value="0220518292">
+            <textarea cols="30" rows="10" style="overflow:hidden" id="sms_msg" name="sms_msg"></textarea>
+            <br>
+            <label>수신자 번호</label>
+            <input type="text" id="susin1" name="susin1">
+            <br>
+            <input type="submit" value="문자전송">
+        </form>
+    </div>
+
+
+    </body>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/valid_value.js"></script>
+</html>
