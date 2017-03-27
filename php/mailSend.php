@@ -31,7 +31,7 @@
           <img src='http://whatshoe.co.kr/bk/shoe/images/Your-Foot.png' >
       </div>
       <div>
-          <img src= '".$L_img_path."' alt='1''  style='width : 80%'/>
+          <img src= '".$L_img_path."' alt='1'  style='width : 80%'/>
       </div>
       <div>
           <img src= '".$R_img_path."' alt='1'  style='width : 80%' />

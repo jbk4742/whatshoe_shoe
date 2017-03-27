@@ -1,0 +1,13 @@
+#send_btn{
+    background-color: #f25a45;
+    width: 20%;
+    height: 40px;
+    margin: auto;
+    padding-top: 1%;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #252525;
+}

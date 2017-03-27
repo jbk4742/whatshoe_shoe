@@ -39,6 +39,9 @@ $('#shoe_register').click(function () {
     //수신번호 메시지전송을 위해 input value 설정
     document.getElementById('susin1').value = phone;
 
+
+
+
     //valid 검사 및 사이즈
     if(!valid_name(name)){
 
@@ -64,8 +67,20 @@ $('#shoe_register').click(function () {
             comment = "측정한 발의 사이즈는 왼발 "+measure_size_left+", 오른발 "+measure_size_right+" / 발볼의 사이즈는 왼발 "+football_left+", 오른발 "+football_right+" 입니다. 이 수치들로 봤을 때 고객님의 발은 넓적형에 가깝습니다. 넓적형은 평균대비 발볼의 사이즈가 큰 경우로써 신발을 신을 때 끼는 경우가 생길 수도 있으니 유의하시길 바랍니다.";
         }
 
-        document.getElementById('sms_msg').value = comment;
-        alert(comment);
+        //input 저장 문자 메시지에 갈 내용!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        document.getElementById('sms_msg').value = "test";
+
+        //변수값 저장.
+        localStorage.name = name;
+        localStorage.susin1 = phone;
+        localStorage.mail = mail;
+        localStorage.football_L = football_left;
+        localStorage.football_R = football_right;
+        localStorage.football_L_addr = left_img;
+        localStorage.football_R_addr = right_img;
+        localStorage.measure_L = measure_size_left;
+        localStorage.measure_R = measure_size_right;
+        localStorage.comment = comment;
 
         //디비에 고객정보 저장
         $.post("http://whatshoe.co.kr/bk/shoe/php/shoeRegister.php",
@@ -85,12 +100,15 @@ $('#shoe_register').click(function () {
                     document.getElementById('shoe_R_img').src = "http://whatshoe.co.kr/bk/shoe/images/R/"+measure_size_right+""+football_right+".png";
                     document.getElementById('shoe_L_img').src = "http://whatshoe.co.kr/bk/shoe/images/L/"+measure_size_left+""+football_left+".png";
                     //이미지 띄우고 문자메시지, 이메일 전송
-                    //document.getElementById('form').submit(); //문자 전송
+
+                    location.href="mailSend.html"
+
+                   // document.getElementById('form').submit(); //문자 전송
                  } else {
                     alert(data + "실패!");
                 }
             });
-
+/*
         //메일 전송
         $.post("http://whatshoe.co.kr/bk/shoe/php/mailSend.php",
             {
@@ -107,6 +125,6 @@ $('#shoe_register').click(function () {
                 alert(status);
                 alert(data);
             });
-
+*/
         }
 });
